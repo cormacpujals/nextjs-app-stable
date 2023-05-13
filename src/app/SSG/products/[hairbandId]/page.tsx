@@ -6,7 +6,17 @@ export async function generateStaticParams() {
 }
 
 const page = async (props: any) => {
-  return <div>hello</div>
+
+  return (
+    <div 
+    className="widgetHeader"
+    style={{
+      color: 'red',
+      fontFamily: 'Souvenir Bold, sans-serif'}}
+    >
+      hello
+    </div>
+  )
 }
  
 export default page;
