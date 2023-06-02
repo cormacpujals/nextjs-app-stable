@@ -1,5 +1,6 @@
 import { connectToDB } from "@/utils/database";
 import Todo from "@/models/todo";
+import { NextResponse } from "next/server"
 
 export const POST = async (req) => {
   const { todo } = await req.json();
@@ -8,7 +9,7 @@ export const POST = async (req) => {
     await connectToDB();
 
     const newTodo = new Todo({
-      todo
+      todo,
     })
 
     await newTodo.save();
@@ -18,5 +19,18 @@ export const POST = async (req) => {
     })
   } catch (error) {
     return new Response("Failed to create new todo", { status: 500 }) 
+  }
+}
+
+export const GET = async () => {
+  
+  try {
+    await connectToDB();
+    const todos = await Todo.find();
+
+    return new NextResponse(todos, { status: 200 });
+  } catch (error) {
+    return new NextResponse("DB error", { status: 500 });
+    
   }
 }
