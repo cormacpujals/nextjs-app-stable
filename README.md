@@ -1,7 +1,6 @@
-Project for me to practice the newly stable Next.js app router.
+This project has two main folders, app-router-data-fetching and to-do, each serve a different purpose. 
 
-app-router-practice holds examples of the following rendering methods: SSR (server-side rendering), SSG (static site generation), CSR (client-side rendering), and ISR, (incremental static site generation).
+1. app-router-data-fetching will hold examples of the following rendering methods: SSR (server-side rendering), SSG (static site generation), CSR (client-side rendering), and ISR, (incremental static site generation). 
+2. to-do will be a basic full CRUD Next.js app that connects with a MongoDB database written in TypeScript. So far the tutorials I have seen online fail to show folks simple full stack Next.js apps. Either they are frontend proof-of-concepts, or fully built out ecommerce sites using prisma, postgres, and all of the latest Next features. I want this app to be the stepping stone to those impressive tutorials.
 
-I intend to build to-do into a dead-simple full CRUD Next.js app that connects to a MongoDB (an example I have yet to see online)
-
-Both of these are works in progress, so if you have any suggestions please let me know. Nonetheless, I hope they're a help and reach out if you have any questions.
+Please reach out if you have any questions and if you'd like to collaborate, please reach out!
