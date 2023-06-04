@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import AddTodo from './add-todo/page';
+import AllTodos from '../components/AllTodos';
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-    <AddTodo />
+      <AddTodo />
+      <AllTodos />
     </main>
   )
 }
