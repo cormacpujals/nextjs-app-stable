@@ -7,7 +7,6 @@ export const GET = async () => {
   try {
     await connectToDB();
     const todos = await Todo.find();
-    console.log(todos);
 
     return new NextResponse(JSON.stringify(todos), { status: 200 });
   } catch (error) {

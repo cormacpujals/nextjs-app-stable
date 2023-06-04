@@ -13,10 +13,7 @@ export const POST = async (req) => {
     })
 
     await newTodo.save();
-
-    return new Response(JSON.stringify(newTodo), {
-      status: 201
-    })
+    return new Response(JSON.stringify(newTodo), { status: 201 })
   } catch (error) {
     return new Response("Failed to create new todo", { status: 500 })
   }

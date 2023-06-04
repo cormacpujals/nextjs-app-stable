@@ -1,5 +1,5 @@
 'use client';
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const AddTodo = () => {
@@ -11,7 +11,7 @@ const AddTodo = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch('/api/add-todo', {
+      const res = await fetch('/api/todos/create', {
         method: 'POST',
         body: JSON.stringify({
           todo: todo,
@@ -22,7 +22,7 @@ const AddTodo = () => {
         console.log(JSON.stringify(res.body));
         router.push("/");
       } else {
-        const error = await res.text(); 
+        const error = await res.text();
         console.log(`error: ${error}, got todo: '${todo}'`);
       }
     } catch (error) {

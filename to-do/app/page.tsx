@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import AddTodo from './add-todo/page';
+import AddTodo from '../components/AddTodo';
 import AllTodos from '../components/AllTodos';
 
 export default function Home() {

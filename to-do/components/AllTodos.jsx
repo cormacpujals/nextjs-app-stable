@@ -1,13 +1,15 @@
 'use client'
 import { useEffect, useState } from 'react';
+import PromptCard from '@/components/PromptCard';
 
 const TodoCardList = ({ todos }) => {
   return (
       <div>
         {todos.map((todo) => (
-            <li key={todo._id}>
-              {todo.todo}
-            </li>
+            <PromptCard
+                todo={todo}
+                key={todo._id}
+            />
         ))}
       </div>
   )
