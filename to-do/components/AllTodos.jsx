@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react';
 import PromptCard from '@/components/PromptCard';
 
+// need to reload state upon create
+
 const TodoCardList = ({ todos }) => {
   return (
       <div>

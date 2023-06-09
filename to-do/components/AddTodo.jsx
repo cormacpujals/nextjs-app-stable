@@ -25,6 +25,7 @@ const AddTodo = () => {
         const error = await res.text();
         console.log(`error: ${error}, got todo: '${todo}'`);
       }
+      // reload all todos
     } catch (error) {
       console.log(error);
     }
