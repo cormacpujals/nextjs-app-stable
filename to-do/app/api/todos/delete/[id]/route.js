@@ -2,7 +2,7 @@ import { connectToDB } from "@/utils/database";
 import Todo from "@/models/todo";
 import { NextResponse } from "next/server";
 
-export const DELETE = async (req) => {
+export const POST = async (req) => {
   try {
     await connectToDB();
 
@@ -10,7 +10,7 @@ export const DELETE = async (req) => {
     console.log(`req.body: ${JSON.stringify(req.body)}`)
     console.log(`req.query: ${req.query}`)
 
-    const { id } = req.query;
+    // const { id } = req.query;
     const todo = todo.find((todo) => todo._id === parseInt(id));
     res.status(200).json(todo);
   } catch (error) {

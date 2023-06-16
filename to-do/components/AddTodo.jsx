@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-const AddTodo = () => {
+const AddTodo = ({ fetchTodos }) => {
 
   const router = useRouter();
   const [todo, setTodo] = useState("");
@@ -20,12 +20,13 @@ const AddTodo = () => {
 
       if (res.ok) {
         console.log(JSON.stringify(res.body));
+        fetchTodos();
+        setTodo("")
         router.push("/");
       } else {
         const error = await res.text();
         console.log(`error: ${error}, got todo: '${todo}'`);
       }
-      // reload all todos
     } catch (error) {
       console.log(error);
     }
@@ -33,7 +34,7 @@ const AddTodo = () => {
 
   return (
     <div>
-      <h2>Add a todo</h2>
+      <h2>Add a to-do</h2>
       <form onSubmit={createTodo}>
         <input
           type="text"
