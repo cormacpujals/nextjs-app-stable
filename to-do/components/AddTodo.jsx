@@ -1,10 +1,10 @@
 'use client';
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const AddTodo = ({ fetchTodos }) => {
 
-  const router = useRouter();
+  // const router = useRouter();
   const [todo, setTodo] = useState("");
 
   const createTodo = async (e) => {
@@ -22,7 +22,7 @@ const AddTodo = ({ fetchTodos }) => {
         console.log(JSON.stringify(res.body));
         fetchTodos();
         setTodo("")
-        router.push("/");
+        // router.push("/");
       } else {
         const error = await res.text();
         console.log(`error: ${error}, got todo: '${todo}'`);

@@ -25,7 +25,8 @@ export default function Home() {
   let [todos, setTodos] = useState([])
 
   const fetchTodos = async () => {
-  const res = await fetch('/api/todos');
+    // fetch does not require absolute URL's, but either node-fetch or Jest requires the absolute URL for the tests to pass
+  const res = await fetch('http://localhost:3000/api/todos');
   const data = await res.json();
   setTodos(data);
 }
